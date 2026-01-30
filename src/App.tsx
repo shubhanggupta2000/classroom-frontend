@@ -1,7 +1,6 @@
 import { GitHubBanner, Refine } from "@refinedev/core";
 import { DevtoolsPanel, DevtoolsProvider } from "@refinedev/devtools";
 import { RefineKbar, RefineKbarProvider } from "@refinedev/kbar";
-
 import routerProvider, {
   DocumentTitleHandler,
   UnsavedChangesNotifier,
@@ -11,21 +10,20 @@ import "./App.css";
 import { Toaster } from "./components/refine-ui/notification/toaster";
 import { useNotificationProvider } from "./components/refine-ui/notification/use-notification-provider";
 import { ThemeProvider } from "./components/refine-ui/theme/theme-provider";
-import { dataProvider } from "./providers/data";
+import Dashboard from "@/pages/dashboard.tsx";
 import { BookOpen, GraduationCap, Home } from "lucide-react";
-import { Layout } from "./components/refine-ui/layout/layout";
+import { Layout } from "@/components/refine-ui/layout/layout.tsx";
 import SubjectsList from "@/pages/subjects/list.tsx";
 import SubjectsCreate from "@/pages/subjects/create.tsx";
-import Dashboard from "./pages/dashboard";
+import ClassesList from "@/pages/classes/list.tsx";
+import ClassesCreate from "@/pages/classes/create.tsx";
+import ClassesShow from "@/pages/classes/show.tsx";
 
-// import ClassesList from "@/pages/classes/list.tsx";
-// import ClassesCreate from "@/pages/classes/create.tsx";
-// import ClassesShow from "@/pages/classes/show.tsx";
+import { dataProvider } from "@/providers/data.ts";
 
 function App() {
   return (
     <BrowserRouter>
-      <GitHubBanner />
       <RefineKbarProvider>
         <ThemeProvider>
           <DevtoolsProvider>
@@ -36,7 +34,7 @@ function App() {
               options={{
                 syncWithLocation: true,
                 warnWhenUnsavedChanges: true,
-                projectId: "uGWMyL-ZBafbC-9U4OP5",
+                projectId: "jtNqZy-1VTAjv-OXwtBn",
               }}
               resources={[
                 {
@@ -74,11 +72,11 @@ function App() {
                     <Route path="create" element={<SubjectsCreate />} />
                   </Route>
 
-                  {/* <Route path="classes">
+                  <Route path="classes">
                     <Route index element={<ClassesList />} />
                     <Route path="create" element={<ClassesCreate />} />
                     <Route path="show/:id" element={<ClassesShow />} />
-                  </Route> */}
+                  </Route>
                 </Route>
               </Routes>
               <Toaster />
