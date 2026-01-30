@@ -10,13 +10,13 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select.tsx";
-import { DEPARTMENT_OPTIONS } from "@/constants";
 import { CreateButton } from "@/components/refine-ui/buttons/create.tsx";
 import { DataTable } from "@/components/refine-ui/data-table/data-table.tsx";
 import { useTable } from "@refinedev/react-table";
-import { Subject } from "@/types";
 import { ColumnDef } from "@tanstack/react-table";
 import { Badge } from "@/components/ui/badge.tsx";
+import { Subject } from "@/types";
+import { DEPARTMENT_OPTIONS } from "@/constants";
 
 const SubjectsList = () => {
   const [searchQuery, setSearchQuery] = useState("");
